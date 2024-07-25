@@ -27,13 +27,20 @@ time, mark, audio, video {
 /* border: solid 1px red; */
 
 .main-container {
-    
+    display: grid;
+    width: auto;
+    height: 64rem;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 10% 40% 10% 40%;
 }
+
 /*header section*/
 .header-container {
     display: block;
+    position: fixed;
     width: 25rem;
     margin: 2rem;
+
 }
 
 .header-container h1 {
@@ -45,30 +52,51 @@ time, mark, audio, video {
 
 /*socials section*/
 .socials-container {
-    display: block; /*prolly cahnge this to flex when you get the icons*/
+    display: flex;
+    /*position: fixed;*/
+    justify-content: space-around;
+    align-items: center;
+    grid-area: 3 / 1 / 4 / 2;
     width: 25rem;
     height: 3.125rem;
     margin-left: 2rem;
-    background-color: #D9D9D9;
 
 }
 
 /*contact section*/
 .contact-container {
     display: block;
-    margin-top: 3.38rem;
+    grid-area: 4 / 1 / 5 / 2;
+    /*margin-top: 3.38rem;*/
     margin-left: 2rem;
     padding: 1rem;
-    width: 25rem;
+    width: 23rem;
+    height: 17.5rem;
     background-color: #D9D9D9;
 }
 .send {
-    margin: 1rem 0;
+    /*margin: 1rem 0;*/
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
 }
 
 .text-box {
     margin: 0 1rem;
 }
 .submit-button {
-    text-align: right;
+    display: block;
+    float: right;
+    margin-top: .5rem;
+    margin-right: .60rem;
+}
+
+/* nav section*/
+.nav-container {
+    display: flex;
+    /* position: fixed; */
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+   /* background-color: #D9D9D9;*/
 }
