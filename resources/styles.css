@@ -19,30 +19,120 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-left: 1rem;
+
+}
+
+.sidebar h1 {
+    font-size: 6rem;
+    line-height: 1.5;
+    color: #453636
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    width: 27.125rem;
+    font-size: 1.5rem;
+    color: #453636
+}
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 27.125rem;
+    height: 13.8125rem;
+    background-color: beige;
+    border-radius: 20px;
+}
+.contact p {
+    text-align: center;
+    color: #453636
+}
+.contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #453636
+}
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .main-container {
+        display: flex;
+        height: 100vh;
+        padding: 0;
+    }
+    .sidebar {
+        width: 425px;
+        padding: 0;
+        margin: 16px 0;
+        height: 400px;
+    }
+    .sidebar h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    .contact {
+        width: 400px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 @font-face {
     font-family: "Libre Baskerville";
     src: url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 }
-/* border: solid 1px red; */
+
+@font-face {
+    font-family: "Source Sans 3";
+    src: url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+}
+
+/* border: solid 1px red; 
 
 .main-container {
     display: grid;
-    width: auto;
-    height: 64rem;
+    width: 90rem;
+    height: auto;
     grid-template-columns: 30% 70%;
     grid-template-rows: 10% 40% 10% 40%;
 }
 
-/*header section*/
-.header-container {
-    display: block;
-   /* position: fixed; */
+/*header section
+
+.side-panel-container {
+    display: flex;
+    flex-direction: column;
     width: 24rem;
     margin: 2rem;
-    /*border: solid 1px red;*/
-
-}
+} 
 
 .header-container h1 {
     font-family: "Libre Baskerville";
@@ -51,40 +141,36 @@ time, mark, audio, video {
     line-height: 1.5;
 }
 
-/*socials section*/
+/*socials section
 .socials-container {
     display: flex;
-    /*position: fixed;*/
     justify-content: space-between;
-    align-content: center;
     align-items: center;
-    grid-area: 3 / 1 / 4 / 2;
     width: 12rem;
     height: 3.125rem;
-    margin-left: 2rem;
+    margin: 3rem;
     padding: 0 1rem;
-    /*border: solid 1px red*/
 }
 
-/*contact section*/
+
 .contact-container {
     display: block;
     grid-area: 4 / 1 / 5 / 2;
-    /* margin-top: 3.38rem; */
-    margin-left: 2rem;
+    margin-top: 3rem;
+    margin-left: 1.5rem;
     padding: 1rem;
+    width: 23rem;
     width: 22rem;
     height: 17.5rem;
     border-radius: 10px;
     background-color: #D9D9D9;
 }
 .send {
-    /*margin: 1rem 0;*/
+    /*margin: 1rem 0;
     margin-top: 1rem;
     margin-bottom: 2rem;
     margin-left: 1rem;
 }
-
 .text-box {
     margin: 0 1rem;
 }
@@ -95,81 +181,136 @@ time, mark, audio, video {
     margin-right: .60rem;
 }
 
-
-/* nav section*/
+/* nav section
 .nav-container {
     display: flex;
+    flex-shrink: 1;
     grid-area: 1 / 2 / 2 / 2;
-    /*position: fixed;*/
+    /*position: fixed; figure out how to get this to stick in its column
     width: 99%;
     height: 1rem;
     justify-content: space-around;
     align-items: center;
     margin-top: 4.5rem;
-   /* background-color: #D9D9D9;*/
-   /*border: solid 1px red;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+
 }
 
-/* photo section */
+/* photo section 
+.photo-quote-container {
+    display: flex;
+    flex-direction: column;
+    grid-area: 2 / 2 / 7 / 2;
+}
 .photo-a-container {
     display: flex;
-    grid-area: 2 / 2 / 3 / 2;
-    width: 100%;
+    width: 99%;
     height: 21rem;
-    margin: 2rem;
+    margin: 2rem 0;
     overflow: hidden;
 }
 
-img {
-    width: 100%;
+.photo-b-container {
+    display: flex;
+    width: 99%;
+    height: 21rem;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+
+.img-a {
+    width: 99%;
     height: 21rem;
     object-fit: cover;
     object-position: 50% 50%;
-
 }
 
-.quote {
+.img-b {
+    width: 99%;
+    height: 21rem;
+    object-fit: cover;
+    object-position: 50% 80%;
+}
+
+
+.quote-a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    grid-area: 3 / 2 / 4 / 2;
-    width: 100%;
-    font-size: 1.5rem;
-    line-height: 2;
-    border: solid 1px red
+    width: 99%;
+    font-size: 1rem;
+    line-height: 3;
+    margin: 2rem 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+.copy {
+    display: flex;
+    grid-area: 7 / 2 / 8 / 2;
+    margin: 2rem;
+    justify-content: flex-end;
+    color: #D9D9D9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .75rem;
+
 }
 
 @media only screen and (max-width: 425px) {
-    .header-container h1 {
-        font-size: 36px;
-        margin-top: 16px;
-        margin-left: 0;
-        text-align: center;
-    }
-    .socials-container {
-        position: absolute;
-        height: 16px;
-        top: 75px;
-        margin: 16px 100px;
-        padding: 5px;
-    
-        
-    }
-    .nav-container {
-        position: absolute;
-        top: 125px;
-        left: 0;
-        margin: 16px 25px;
-        padding: 5px;
-        gap: 30px;
-    }
-    .photo-a-container img {
-        height: 336px;
-        width: 384px;
-        position: absolute;
-        top: 200px;
-        left: 32px;
-        
-    }
+   .main-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+   }
+
+   .fixed {
+    position: relative;
+   }
+   
+   .header-container h1{
+    position: relative;
+    top: 16px;
+    width: 350px;
+    height: 40px;
+    font-size: 36px;
+    margin: 0 0 16px 0;
+   }
+   .socials-container {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    height: auto;
+    padding-top: 16px;
+    margin: 20px 90px;
+
+   }
+   .contact-container {
+    display: block;
+    position: fixed;
+    bottom: 16px;
+   }
+   .nav-container {
+    font-size: 16px;
+    margin: 20px 0;
+   }
+   .photo-a-container {
+    margin-top: 20px;
+   }
+   .quote-a {
+    font-size: 16px;
+    text-align: center;
+    line-height: 2;
+   }
+   .quote-b {
+    margin-top: 20px;
+    font-size: 16px;
+   }
 }
+
+
+
+ 
