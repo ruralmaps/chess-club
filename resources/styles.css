@@ -35,7 +35,7 @@ time, mark, audio, video {
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    margin-left: 1rem;
+    margin: 1rem;
 
 }
 
@@ -70,7 +70,57 @@ time, mark, audio, video {
 .contact h2 {
     text-align: center;
     font-size: 2rem;
-    color: #453636
+    color: #453636;
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    margin-top: 1rem;
+    
+}
+.content p {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: rgb(255,255,255, .25)
+}
+.box {
+    display: flex;
+    position: relative;
+    background-color: beige;
+    border-radius: 20px;
+}
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #453636;
+    font-size: 1.2rem;
+    width: 100%;
+    bottom: 0;
+}
+.mission {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.events {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.join {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.donate {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.location {
+    grid-column: span 3;
+    grid-row: span 1;
 }
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     .main-container {
@@ -91,6 +141,11 @@ time, mark, audio, video {
     .contact {
         width: 400px;
     }
+    
+}
+
+@media only screen and (max-width: 768px) {
+
 }
 
 
